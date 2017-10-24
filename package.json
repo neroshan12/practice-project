@@ -1,0 +1,26 @@
+{
+  "name": "practice-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neroshan12/practice-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neroshan12/practice-project/issues"
+  },
+  "homepage": "https://github.com/neroshan12/practice-project#readme",
+  "engines": {
+    "node": "6.11.3"
+  }
+}
