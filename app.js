@@ -4,16 +4,35 @@
 
 
 
-// var currentLocation;
+var currentLocation;
 // var googleResponse;
 // var googleJSON;
 navigator.geolocation.getCurrentPosition(function(position) {
   currentLocation = (`${position.coords.latitude}, ${position.coords.longitude}`);
-  callGoogleForDistance(currentLocation, "51.5317,-0.0668");
+  var hcf = "51.5316758,-0.0690335";
+  var lbc = "51.5280202,-0.0534266";
+  var lsc = "51.5175798,-0.0802112";
+  var gc = "51.5210263,-0.0838455";
+  var locations = {
+    'hcf': {
+    'coords':"51.5316758,-0.0690335",
+    'divElement': 'hcf-distance'
+  }
+}
+  writeDistanceToScreen(locations['hcf']['coords'], locations['hcf']['divElement'])
+  writeDistanceToScreen(lbc, 'lbc-distance')
+  writeDistanceToScreen(lsc, 'lsc-distance')
+  writeDistanceToScreen(gc, 'gc-distance')
+
+  callGoogleForDistance(currentLocation, hcf);
 });
 
 // console.log(currentLocation)
 // console.log('Hello')
+function writeDistanceToScreen(destinationCoordinates, elementID) {
+  var dist = callGoogleForDistance(currentLocation, destinationCoordinates)
+  displayDistance(dist, elementID)
+}
 
 
 function callGoogleForDistance(location, destination){
@@ -22,9 +41,14 @@ function callGoogleForDistance(location, destination){
   xhttp.send();
   googleResponse = xhttp.response;
   googleJSON = JSON.parse(googleResponse);
-  displayDistanceFromJSON(googleJSON);
+  return googleJSON.rows[0].elements[0].distance['value'];
+  // displayDistanceFromJSON(googleJSON);
 }
 
-function displayDistanceFromJSON(JSONresponse) {
-  document.getElementById("hcf-distance").innerHTML = JSONresponse.rows[0].elements[0].distance['value'] + 'm';
+function displayDistance(distance, elementID) {
+  document.getElementById(elementID).innerHTML = distance + 'm';
 }
+
+// function displayDistanceFromJSON(JSONresponse) {
+//   document.getElementById("hcf-distance").innerHTML = JSONresponse.rows[0].elements[0].distance['value'] + 'm';
+// }
