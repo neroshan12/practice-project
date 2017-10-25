@@ -1,30 +1,47 @@
-// console.log('test');
-// var config = require('/config.json')
-// console.log(config);
+var locations = {
+  'hcf': {
+  'coords':"51.5316758,-0.0690335",
+  'divElement': 'hcf-distance'
+  },
+  'lbc': {
+    'coords':"51.5280202,-0.0534266",
+    'divElement': 'lbc-distance'
+  },
+  'lsc': {
+    'coords':"51.5175798,-0.0802112",
+    'divElement': 'lsc-distance',
+  },
+  'gc': {
+    'coords':"51.5210263,-0.0838455",
+    'divElement': 'gc-distance',
+  }
+};
+var locationNames = ['hcf','lbc','lsc','gc']
+var currentLocation;
 
-
-
-// var currentLocation;
-// var googleResponse;
-// var googleJSON;
 navigator.geolocation.getCurrentPosition(function(position) {
   currentLocation = (`${position.coords.latitude}, ${position.coords.longitude}`);
-  callGoogleForDistance(currentLocation);
+  for (var location in locations) {
+    if (locations.hasOwnProperty(location)){
+      writeDistanceToScreen(locations[location]['coords'], locations[location]['divElement'])
+    }
+  }
 });
 
-// console.log(currentLocation)
-// console.log('Hello')
+function writeDistanceToScreen(destinationCoordinates, elementID) {
+  var dist = callGoogleForDistance(currentLocation, destinationCoordinates)
+  displayDistance(dist, elementID)
+}
 
-
-function callGoogleForDistance(location){
+function callGoogleForDistance(location, destination){
   var xhttp = new XMLHttpRequest();
-  xhttp.open("GET", `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${location}&destinations=51.5317,-0.0668&mode=walking&key=${googleMapsAPIKey}`, false);
+  xhttp.open("GET", `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${location}&destinations=${destination}&mode=walking&key=${googleMapsAPIKey}`, false);
   xhttp.send();
   googleResponse = xhttp.response;
   googleJSON = JSON.parse(googleResponse);
-  displayDistanceFromJSON(googleJSON);
+  return googleJSON.rows[0].elements[0].distance['value'];
 }
 
-function displayDistanceFromJSON(JSONresponse) {
-  document.getElementById("hcf-distance").innerHTML = JSONresponse.rows[0].elements[0].distance['value'] + 'm';
+function displayDistance(distance, elementID) {
+  document.getElementById(elementID).innerHTML = distance + 'm';
 }
