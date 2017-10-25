@@ -9,16 +9,16 @@
 // var googleJSON;
 navigator.geolocation.getCurrentPosition(function(position) {
   currentLocation = (`${position.coords.latitude}, ${position.coords.longitude}`);
-  callGoogleForDistance(currentLocation);
+  callGoogleForDistance(currentLocation, "51.5317,-0.0668");
 });
 
 // console.log(currentLocation)
 // console.log('Hello')
 
 
-function callGoogleForDistance(location){
+function callGoogleForDistance(location, destination){
   var xhttp = new XMLHttpRequest();
-  xhttp.open("GET", `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${location}&destinations=51.5317,-0.0668&mode=walking&key=${googleMapsAPIKey}`, false);
+  xhttp.open("GET", `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${location}&destinations=${destination}&mode=walking&key=${googleMapsAPIKey}`, false);
   xhttp.send();
   googleResponse = xhttp.response;
   googleJSON = JSON.parse(googleResponse);
