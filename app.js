@@ -17,14 +17,26 @@ navigator.geolocation.getCurrentPosition(function(position) {
     'hcf': {
     'coords':"51.5316758,-0.0690335",
     'divElement': 'hcf-distance'
-  }
-}
-  writeDistanceToScreen(locations['hcf']['coords'], locations['hcf']['divElement'])
-  writeDistanceToScreen(lbc, 'lbc-distance')
-  writeDistanceToScreen(lsc, 'lsc-distance')
-  writeDistanceToScreen(gc, 'gc-distance')
+    },
+    'lbc': {
+      'coords':"51.5280202,-0.0534266",
+      'divElement': 'lbc-distance'
+    },
+    'lsc': {
+      'coords':"51.5175798,-0.0802112",
+      'divElement': 'lsc-distance',
+    },
+    'gc': {
+      'coords':"51.5210263,-0.0838455",
+      'divElement': 'gc-distance',
+    }
+  };
 
-  callGoogleForDistance(currentLocation, hcf);
+  writeDistanceToScreen(locations['hcf']['coords'], locations['hcf']['divElement'])
+  writeDistanceToScreen(locations['lbc']['coords'], locations['lbc']['divElement'])
+  writeDistanceToScreen(locations['lsc']['coords'], locations['lsc']['divElement'])
+  writeDistanceToScreen(locations['gc']['coords'], locations['gc']['divElement'])
+
 });
 
 // console.log(currentLocation)
