@@ -6,7 +6,9 @@
   "dependencies": {
     "http-server": "^0.10.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jasmine": "^2.8.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

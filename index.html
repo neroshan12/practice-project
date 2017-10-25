@@ -2,11 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hackney City Farm Locator</title>
+    <title>Hackney City Farm Locator (and other places)</title>
   </head>
   <body>
-  <div>Distance to HCF:</div>
-  <div id='distance'>test</div>
+
+    <div id='places-to-go'>
+      <div>Distance to HCF:</div> <div id='hcf-distance'>test</div> <button>Directions</button>
+      <div>Distance to Google Campus:</div> <div id='google-campus-distance'>test</div> <button>Directions</button>
+      <div>Distance to London Buddhist Centre:</div> <div id='buddhist-centre-distance'>test</div> <button>Directions</button>
+      <div>Distance to London Steakhouse Co:</div> <div id='steakhouse-distance'>test</div> <button>Directions</button>
+    </div>
+
+    <p id='update-button'><button>Update</button></p>
+
   <script src='./jquery-3.2.1.js'></script>
   <script src='./APIKeys.js'></script>
   <script src='./app.js'></script>

@@ -26,5 +26,5 @@ function callGoogleForDistance(location){
 }
 
 function displayDistanceFromJSON(JSONresponse) {
-  document.getElementById("distance").innerHTML = JSONresponse.rows[0].elements[0].distance['value'] + 'm';
+  document.getElementById("hcf-distance").innerHTML = JSONresponse.rows[0].elements[0].distance['value'] + 'm';
 }
