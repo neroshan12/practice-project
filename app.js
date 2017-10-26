@@ -19,14 +19,21 @@ var locations = {
 var locationNames = ['hcf','lbc','lsc','gc']
 var currentLocation;
 
-navigator.geolocation.getCurrentPosition(function(position) {
+// updateLocationAndDistances();
+
+var updateButton = document.getElementById('update-button');
+updateButton.addEventListener('click', updateLocationAndDistances);
+
+function updateLocationAndDistances() {
+  console.log('hey!');
+  navigator.geolocation.getCurrentPosition(function(position) {
   currentLocation = (`${position.coords.latitude}, ${position.coords.longitude}`);
   for (var location in locations) {
     if (locations.hasOwnProperty(location)){
-      writeDistanceToScreen(locations[location]['coords'], locations[location]['divElement'])
+      writeDistanceToScreen(locations[location].coords, locations[location].divElement);
     }
   }
-});
+});}
 
 function writeDistanceToScreen(destinationCoordinates, elementID) {
   var dist = callGoogleForDistance(currentLocation, destinationCoordinates)
@@ -44,4 +51,5 @@ function callGoogleForDistance(location, destination){
 
 function displayDistance(distance, elementID) {
   document.getElementById(elementID).innerHTML = distance + 'm';
+  console.log('hey again!');
 }
