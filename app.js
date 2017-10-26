@@ -1,19 +1,23 @@
 var locations = {
   'hcf': {
   'coords':"51.5316758,-0.0690335",
-  'divElement': 'hcf-distance'
+  'divElement': 'hcf-distance',
+  'searchName': 'hackney-city-farm'
   },
   'lbc': {
     'coords':"51.5280202,-0.0534266",
-    'divElement': 'lbc-distance'
+    'divElement': 'lbc-distance',
+    'searchName': 'london-buddhist-centre'
   },
   'lsc': {
     'coords':"51.5175798,-0.0802112",
     'divElement': 'lsc-distance',
+    'searchName': 'london-steakhouse-company-middlesex-st'
   },
   'gc': {
     'coords':"51.5210263,-0.0838455",
     'divElement': 'gc-distance',
+    'searchName': 'google-campus-london'
   }
 };
 var locationNames = ['hcf','lbc','lsc','gc']
@@ -36,35 +40,29 @@ function updateLocationAndDistances() {
 });}
 
 
+var locationsArray = ['hcf','gc','lbc','lsc']
 
+for (var i= 0 ;i < locationsArray.length ; i++) {
 
-var hcfDirectionsButton = document.getElementById('hcf-maps');
-hcfDirectionsButton.addEventListener('click', function(){
-  redirectToMaps('hackney-city-farm')
-});
+  (function(){
+    var button = document.getElementById(locationsArray[i]+'-maps')
+    var fixedLocation = i
 
-var gcDirectionsButton = document.getElementById('gc-maps');
-gcDirectionsButton.addEventListener('click', function(){
-  redirectToMaps('google-campus-london')
-});
+    button.addEventListener('click', function(){
+    redirectToMaps(locationsArray[fixedLocation])
+    });
 
-var lbcDirectionsButton = document.getElementById('lbc-maps');
-lbcDirectionsButton.addEventListener('click', function(){
-  redirectToMaps('london-buddhist-centre')
-});
+  }());
+    // }
 
-var lscDirectionsButton = document.getElementById('lsc-maps');
-lscDirectionsButton.addEventListener('click', function(){
-  redirectToMaps('london-steakhouse-company')
-});
+};
+
 
 function redirectToMaps(destination) {
   // hcfCoords = locations.hcf.coords
-  window.location.href = `http://maps.google.com?q=${destination}`;
+  finalDestination = locations[destination].searchName
+  window.location.href = `https://www.google.com/maps/dir/?api=1&origin=${currentLocation}&destination=${finalDestination}&travelmode=walking`;
   ;}
-
-
-
 
 
 function writeDistanceToScreen(destinationCoordinates, elementID) {
