@@ -35,6 +35,38 @@ function updateLocationAndDistances() {
   }
 });}
 
+
+
+
+var hcfDirectionsButton = document.getElementById('hcf-maps');
+hcfDirectionsButton.addEventListener('click', function(){
+  redirectToMaps('hackney-city-farm')
+});
+
+var gcDirectionsButton = document.getElementById('gc-maps');
+gcDirectionsButton.addEventListener('click', function(){
+  redirectToMaps('google-campus-london')
+});
+
+var lbcDirectionsButton = document.getElementById('lbc-maps');
+lbcDirectionsButton.addEventListener('click', function(){
+  redirectToMaps('london-buddhist-centre')
+});
+
+var lscDirectionsButton = document.getElementById('lsc-maps');
+lscDirectionsButton.addEventListener('click', function(){
+  redirectToMaps('london-steakhouse-company')
+});
+
+function redirectToMaps(destination) {
+  // hcfCoords = locations.hcf.coords
+  window.location.href = `http://maps.google.com?q=${destination}`;
+  ;}
+
+
+
+
+
 function writeDistanceToScreen(destinationCoordinates, elementID) {
   var dist = callGoogleForDistance(currentLocation, destinationCoordinates)
   displayDistance(dist, elementID)
