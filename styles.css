@@ -1,0 +1,25 @@
+body {
+  background-color: mediumorchid;
+  text-align: center;
+
+}
+
+.heading{
+
+color:white;
+font-family:courier;
+text-align:center;
+}
+
+#places-to-go
+{
+  color:white;
+  text-align:center;
+}
+
+#hcf-distance
+{
+  color: white;
+  text-align:center;
+
+}

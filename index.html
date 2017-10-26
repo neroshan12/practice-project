@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="styles.css">
     <meta charset="utf-8">
     <title>Homepage</title>
   </head>
-  <body style='background-color:mediumorchid'>
+  <body>
+    <h1 class="heading">Attractour</h1>
+    <h3 class='heading'> Hackney City Farm Locator (and other places) </h3>
 
-    <h1 span style="color:white;font-family:courier" align='center'> Attractour  </h1>
-    <h3 span style="color:white;font-family:courier" align='center'> Hackney City Farm Locator (and other places) </h3>
-
-    <br> </br>
-
-    <div style='color:white;' align='center' id='places-to-go'>
-      <div style="font-family:courier;" style='color:white;' align='center'>Distance to Hackney City Farm:</div> <div align='center' id='hcf-distance'>test</div> <button align='center'>Directions</button>
-      <div style="font-family:courier;" style='color:white;' align='center'>Distance to Google Campus:</div> <div align='center'id='gc-distance'>test</div> <button align='center'>Directions</button>
-      <div style="font-family:courier;" style='color:white;' align='center'>Distance to London Buddhist Centre:</div> <div align='center'id='lbc-distance'>test</div> <button align='center'>Directions</button>
-      <div style="font-family:courier;" style='color:white;' align='center'>Distance to London Steakhouse Co:</div> <div align='center'id='lsc-distance'>test</div> <button align='center'>Directions</button>
+    <div class="heading" id='places-to-go'>
+      <div> Distance to Hackney City Farm:</div> <div id='hcf-distance'>test</div> <button align='center'>Directions</button>
+      <div> Distance to Google Campus:</div> <div id='gc-distance'>test</div> <button align='center'>Directions</button>
+      <div> Distance to London Buddhist Centre:</div> <div id='lbc-distance'>test</div> <button align='center'>Directions</button>
+      <div> Distance to London Steakhouse Co:</div> <div id='lsc-distance'>test</div> <button align='center'>Directions</button>
     </div>
 
     <p align='center' id='update-button'><button>Update</button></p>
     <br> </br>
-    
+
 <center><img src="http://seres.org/wp-content/uploads/2015/09/Logo-White-Tree-No-Bckgrnd.png" alt="Go hug some trees" width='128' height='128'></center>
 
 
@@ -28,7 +26,7 @@
   <script src='./APIKeys.js'></script>
   <script src='./app.js'></script>
   <script>
-  // console.log(config)
+
   </script>
   </body>
 </html>
