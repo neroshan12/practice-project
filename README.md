@@ -11,8 +11,7 @@ MVP of a location based tourist app which alerts users about nearby attractions 
 ------------------
 - npm install
 - http-server
-Alternatively, a production copy is hosted at http://attractour.herokuapp.com/http://attractour.herokuapp.com/
-
+Alternatively, a production copy is hosted [here](http://attractour.herokuapp.com/)
 ## Built With
 ----------
 - Node.js
