@@ -23,7 +23,7 @@ var locations = {
 var locationNames = ['hcf','lbc','lsc','gc']
 var currentLocation;
 
-// updateLocationAndDistances();
+updateLocationAndDistances();
 
 var updateButton = document.getElementById('update-button');
 updateButton.addEventListener('click', updateLocationAndDistances);
