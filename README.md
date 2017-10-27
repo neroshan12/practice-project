@@ -3,13 +3,7 @@
 ---------------------------
 
 #### Team Members:
-[Rob Collins](https://github.com/racoll)
-
-[Nero Siva](https://github.com/neroshan12)
-
-[Rory Hodgson](https://github.com/rorybot)
-
-[Luan van Pletsen](https://github.com/LuanvP)
+[Rob Collins](https://github.com/racoll) | [Nero Siva](https://github.com/neroshan12) | [Rory Hodgson)(https://github.com/rorybot) | [Luan van Pletsen](https://github.com/LuanvP)
 
 MVP of a location based tourist app which alerts users about nearby attractions in a new city. This implementation was developed in a week, and presently only works in the browser. On load, the page displays the distance to various pre-defined local attractions, and by clicking on the 'Directions' button below any attraction the user is redirected to the Google Maps page for getting directions to each location. 
 
