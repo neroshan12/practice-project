@@ -3,11 +3,11 @@ body {
   text-align: center;
 }
 
-.heading{
-text-decoration: overline;
-color:white;
-font-family:courier;
-text-align:center;
+.heading {
+  text-decoration: overline;
+  color:white;
+  font-family:courier;
+  text-align:center;
 }
 
 .subheading {
@@ -26,12 +26,40 @@ text-align:center;
 .button {
   background-color: orchid;
   color: white;
-  border:none;
+  border: none;
   text-align: center;
   font-family:courier;
   text-decoration: none;
   font-size: 13px;
   margin-bottom: 15px;
+  cursor: pointer;
+  outline: none;
+}
+
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 .updatebutton {
@@ -41,35 +69,33 @@ text-align:center;
   text-align: center;
   font-family:courier;
   text-decoration: none;
-  font-size: 15px
+  font-size: 15px;
+  cursor: pointer;
+  outline:none;
 }
 
-#places-to-go
-{
+#places-to-go {
   color:white;
   text-align:center;
   font-weight: bold;
   padding: 5px;
 }
 
-#hcf-distance
-{
+#hcf-distance {
   color: white;
   text-align:center;
   font-weight: bold;
   padding: 5px;
 }
 
-#gc-distance
-{
+#gc-distance {
   color: white;
   text-align:center;
   font-weight: bold;
   padding: 5px;
 }
 
-#lbc-distance
-{
+#lbc-distance {
   color: white;
   text-align:center;
   font-weight: bold;
