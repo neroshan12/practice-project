@@ -27,6 +27,6 @@ Alternatively, a production copy is hosted [here](http://attractour.herokuapp.co
 
 ## Future features
 ------------------
-The application was finally meant to be a mobile app which could run in the background and notify the user once they were within a certain range of a local attraction. To this end, the app was ported to iOS using Cordova, for which the repo can be found [here:](https://github.com/racoll/attractour). Since we were unable to solve the CORS issue for the browser version, the same problem was encountered there, preventing it functioning. 
+The application was finally meant to be a mobile app which could run in the background and notify the user once they were within a certain range of a local attraction. To this end, the app was ported to iOS using Cordova, for which the repo can be found [here](https://github.com/racoll/attractour). Since we were unable to solve the CORS issue for the browser version, the same problem was encountered there, preventing it functioning. 
 
 In future development it is hoped that the locations would not simply be hard-coded into the design, but could be scraped from TripAdvisor or similar sites according to user rating, with checks to ensure that the attractions are open.
