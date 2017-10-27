@@ -3,10 +3,12 @@
 ---------------------------
 
 #### Team Members:
-[a Rob Collins](https://github.com/racoll)
+[Rob Collins](https://github.com/racoll)
+[Nero Siva](https://github.com/neroshan12)
+[Rory Hodgson](https://github.com/rorybot)
+[Luan van Pletsen](https://github.com/LuanvP)
 
-https://github.com/neroshan12
-https://github.com/rorybot
+
 https://github.com/LuanvP
 
 MVP of a location based tourist app which alerts users about nearby attractions in a new city. This implementation was developed in a week, and presently only works in the browser. On load, the page displays the distance to various pre-defined local attractions, and by clicking on the 'Directions' button below any attraction the user is redirected to the Google Maps page for getting directions to each location. 
@@ -32,6 +34,6 @@ Alternatively, a production copy is hosted at http://attractour.herokuapp.com/ht
 
 ## Future features
 ------------------
-The application was finally meant to be a mobile app which could run in the background and notify the user once they were within a certain range of a local attraction. To this end, the app was ported to iOS using Cordova, for which the repo can be found here: https://github.com/racoll/attractour. Since we were unable to solve the CORS issue for the browser version, the same problem was encountered there, preventing it functioning. 
+The application was finally meant to be a mobile app which could run in the background and notify the user once they were within a certain range of a local attraction. To this end, the app was ported to iOS using Cordova, for which the repo can be found [here:](https://github.com/racoll/attractour). Since we were unable to solve the CORS issue for the browser version, the same problem was encountered there, preventing it functioning. 
 
 In future development it is hoped that the locations would not simply be hard-coded into the design, but could be scraped from TripAdvisor or similar sites according to user rating, with checks to ensure that the attractions are open.
